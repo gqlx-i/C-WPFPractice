@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="L220728Test.View.BoxView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:L220728Test.View"
+             xmlns:s="https://github.com/canton7/Stylet"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#FF1664A5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Label HorizontalAlignment="Left" Content="maxwell" FontSize="30"/>
+                    <!--<Label HorizontalAlignment="Left" Content="程式名称" FontSize="15"/>-->
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Background="#FF1664A5" FontSize="25" Content="日志" Command="{s:Action CmdLogs}" Width="100" Margin="5,2,5,2" />
+                    <Button Background="#FF1664A5" FontSize="25" Content="报警" Command="{s:Action CmdAlarm}" Width="100" Margin="5,2,50,2"/>
+                    <Label Content="2022.1.1" FontSize="25" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <ContentControl s:View.Model="{Binding ViewModelBase}" Grid.Row="1"/>
+        <Border Grid.Row="2" Background="LightGray">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button Content="主页" Command="{s:Action CmdHome}" FontSize="15" Margin="5" Width="80"></Button>
+                    <Button Content="配方" FontSize="15" Margin="5" Width="80"></Button>
+                    <Button Content="参数设置" FontSize="15" Margin="5" Width="80"></Button>
+                    <Button Content="维护" FontSize="15" Margin="5" Width="80"></Button>
+                    <Button Content="监控" FontSize="15" Margin="5" Width="80"></Button>
+                    <Button Content="系统设置" FontSize="15" Margin="5" Background="LightBlue" Width="80"></Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="系统初始化" Background="LightBlue" FontSize="15" Margin="5" Width="80"></Button>
+                    <Button Content="手动控制" FontSize="15" Margin="5" Background="Aquamarine" Width="80"></Button>
+                    <Button Content="工具箱" FontSize="15" Margin="5" Background="IndianRed" Width="80"></Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

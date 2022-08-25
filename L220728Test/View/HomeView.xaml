@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="L220728Test.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:L220728Test.View"
+             xmlns:s="https://github.com/canton7/Stylet"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row="0" x:Name="content" Content="{Binding Animation}"></ContentControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Grid.Column="0" Content="轴名称" FontSize="15" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="5"/>
+                    <ComboBox Grid.Column="1" FontSize="15" ItemsSource="{Binding CartoonModels}" DisplayMemberPath="AxisName" SelectedValue="{Binding SelectItem}" SelectedItem="{Binding drivingModel.AxisName}" Height="60" Width="140" VerticalContentAlignment="Center" Margin="5"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Grid.Column="0" Content="轴运动动作" FontSize="15" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="5"/>
+                    <ComboBox Grid.Column="1" FontSize="15" ItemsSource="{Binding SelectItem.ActionName}" SelectedItem="{Binding Act}" Height="60" Width="140" VerticalContentAlignment="Center" Margin="5"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label HorizontalAlignment="Right" Content="轴运动比例" FontSize="15" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="5"/>
+                    <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding SelectItem.MoveScale}"  SelectedItem="{Binding Move}" Height="60" Width="140" FontSize="15" VerticalContentAlignment="Center" Margin="5"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label HorizontalAlignment="Right" Content="轴旋转比例" FontSize="15" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="5"/>
+                    <ComboBox HorizontalAlignment="Left" ItemsSource="{Binding SelectItem.RotateScale}" SelectedItem="{Binding Rota}" Height="60" Width="140" FontSize="15" VerticalContentAlignment="Center" Margin="5"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button VerticalAlignment="Center" VerticalContentAlignment="Center" Command="{s:Action RunDemo}" Content="Run" Width="140" Height="60" Margin="5" FontSize="20"></Button>
+        </Grid>
+    </Grid>
+</UserControl>

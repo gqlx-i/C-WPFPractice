@@ -1,0 +1,25 @@
+﻿<Application x:Class="L220728Test.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:L220728Test"
+             xmlns:s="https://github.com/canton7/Stylet"
+             xmlns:mw="http://www.maxwell-gp.com/">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary mw:Theme.Key="Default"/>-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaxwellControl;component/Themes/Theme.xaml"/>-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaxwellControl;component/Themes/SkinDefault.xaml"/>
+                <mw:SkinSelector Skin="Default"/>-->
+                <ResourceDictionary Source="pack://application:,,,/MaxwellControl;component/Themes/SkinTouchable.xaml" />
+                <!--<mw:SkinSelector Skin="Touchable"/>-->
+                <s:ApplicationLoader>
+                    <s:ApplicationLoader.Bootstrapper>
+                        <local:Bootstrapper />
+                    </s:ApplicationLoader.Bootstrapper>
+                </s:ApplicationLoader>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
